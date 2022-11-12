@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#03A9F4"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <ImageView
+        android:layout_marginTop="130dp"
+        android:layout_width="300dp"
+        android:layout_height="306dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ad">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/fontfamily"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="OUR HOME"
+        android:textColor="#fff"
+        android:textSize="50sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:text="Find your home digitaliy !"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins">
+
+    </TextView>
+
+
+
+</LinearLayout>
