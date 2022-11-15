@@ -135,23 +135,28 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/login_button"
+        android:onClick="registerButtonclick"
+        android:id="@+id/signup_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:background="@color/material_dynamic_primary70"
         android:text="Signup"
-        android:textColor="#283593" />
+        android:textColor="#283593"
+        tools:ignore="OnClick" />
 
     <TextView
+        android:onClick="for_loginclick"
+        android:id="@+id/for_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/poppins_extrabold"
         android:text="Click here to Login"
-        android:textAlignment="center">
+        android:textAlignment="center"
+        tools:ignore="OnClick">
 
 
     </TextView>
