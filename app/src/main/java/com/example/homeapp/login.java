@@ -26,8 +26,8 @@ public class login extends AppCompatActivity {
 
          signup = findViewById(R.id.for_signup);
          login_btn = findViewById(R.id.login_button);
-        username_var = findViewById(R.id.login_user_id);
-        password_var = findViewById(R.id.login_password);
+        username_var = findViewById(R.id.username_text_field_design);
+        password_var = findViewById(R.id.password_input_field);
 
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
