@@ -10,8 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rajendra.foodapp.R;
-import com.rajendra.foodapp.model.AsiaFood;
+
+import com.example.homeapp.R;
+import com.example.homeapp.model.AsiaFood;
 
 import java.util.List;
 

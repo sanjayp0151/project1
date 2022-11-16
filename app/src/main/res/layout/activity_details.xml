@@ -216,13 +216,15 @@
         android:id="@+id/signup_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:background="#2196F3"
         android:onClick="registerButtonclick"
         android:text="ADD TO CART"
         android:textColor="#283593"
-        tools:ignore="OnClick"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="667dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick" />
 
     <ImageView
         android:id="@+id/imageView14"
@@ -236,9 +238,12 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="67dp"
         android:text="SeeMore"
         android:textColor="#2196F3"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="582dp" />
+        app:layout_constraintBottom_toTopOf="@+id/signup_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
