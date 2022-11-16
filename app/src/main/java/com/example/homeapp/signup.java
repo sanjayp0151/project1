@@ -8,12 +8,17 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class signup extends AppCompatActivity {
 
     TextInputLayout fullname_var,username_var,phonenumber_var,password_var,email_var;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +55,31 @@ public class signup extends AppCompatActivity {
                     if(!phoneNumber.isEmpty()){
                         phonenumber_var.setError(null);
                         phonenumber_var.setErrorEnabled(false);
-                        if(password.isEmpty()){
+                        if(!password.isEmpty()){
                             password_var.setError(null);
                             password_var.setErrorEnabled(false);
-                            if(email.matches("\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b")){
 
-                            }else{
-                                email_var.setError("Invalid Email");
-                            }
+
+                                firebaseDatabase = FirebaseDatabase.getInstance();
+                                reference = firebaseDatabase.getReference("datauser");
+
+                                String fullname_s = fullname_var.getEditText().getText().toString();
+                                String username_s = username_var.getEditText().getText().toString();
+                                String email_s = email_var.getEditText().getText().toString();
+                                String phoneNumber_s = phonenumber_var.getEditText().getText().toString();
+                                String password_s = password_var.getEditText().getText().toString();
+
+                                storingdata storingdatass = new storingdata(fullname_s,username_s,email_s,phoneNumber_s,password_s);
+
+                                //for storing data in firebase
+                                reference.child(username_s).setValue(storingdatass);
+
+                                Toast.makeText(getApplicationContext(),"Register sucsessfuly",Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(),dashboard.class);
+                                startActivity(intent);
+                                finish();
+
+
                         }else{
                             password_var.setError("PLEASE ENTER THE PASSWORD!");
                         }
