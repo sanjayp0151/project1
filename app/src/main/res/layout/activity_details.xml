@@ -219,12 +219,12 @@
         android:layout_marginBottom="16dp"
         android:background="#2196F3"
         android:onClick="registerButtonclick"
-        android:text="ADD TO CART"
+        android:text="Book Now"
         android:textColor="#283593"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="OnClick" />
+        tools:ignore="OnClick,TextContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView14"

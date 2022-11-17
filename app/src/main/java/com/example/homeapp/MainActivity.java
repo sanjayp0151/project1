@@ -8,7 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.homeapp.adapter.AsiaFoodAdapter;
 import com.example.homeapp.adapter.PopularFoodAdapter;
+import com.example.homeapp.model.AsiaFood;
+import com.example.homeapp.model.PopularFood;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +27,39 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // now here we will add some dummy data to out model class
+        List<PopularFood> popularFoodList = new ArrayList<>();
+        popularFoodList.add(new PopularFood("civil line 1 ","$57",R.drawable.homesecond));
+        popularFoodList.add(new PopularFood("civil line  2","$57",R.drawable.homethird));
+        popularFoodList.add(new PopularFood("civil line  3","$57",R.drawable.homeforth));
+        popularFoodList.add(new PopularFood("civil line  3","$57",R.drawable.homethird));
+        popularFoodList.add(new PopularFood("civil line  3","$57",R.drawable.homeforth));
+        popularFoodList.add(new PopularFood("civil line  3","$57",R.drawable.homesecond));
 
+
+        setPopularRecycler(popularFoodList);
+
+        List<AsiaFood> asiaFoodList = new ArrayList<>();
+        asiaFoodList.add(new AsiaFood("makroniya 1","25",R.drawable.homeforth,"4.5","santosh"));
+        asiaFoodList.add(new AsiaFood("makroniya 2","29",R.drawable.homeforth,"4.0","antosh"));
+        asiaFoodList.add(new AsiaFood("makroniya 3","28",R.drawable.homeforth,"3.5","tosh"));
+        asiaFoodList.add(new AsiaFood("makroniya 4","29",R.drawable.homeforth,"2.5","stosh"));
+        asiaFoodList.add(new AsiaFood("makroniya 5","25",R.drawable.homeforth,"4.5","sans"));
+        setAsiaRecycler(asiaFoodList);
+
+    }
+    private void setPopularRecycler(List<PopularFood>popularFoodList){
+        popularRecycler = findViewById(R.id.popular_recycler);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
+        popularRecycler.setLayoutManager(layoutManager);
+        popularFoodAdapter = new PopularFoodAdapter(this,popularFoodList);
+        popularRecycler.setAdapter(popularFoodAdapter);
+    }
+    private void setAsiaRecycler(List<AsiaFood>asiaFoodList){
+        asiaRecycler = findViewById(R.id.asia_recycler);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
+        asiaRecycler.setLayoutManager(layoutManager);
+        asiaFoodAdapter = new AsiaFoodAdapter(this,asiaFoodList);
+        asiaRecycler.setAdapter(asiaFoodAdapter);
     }
 
     // Hi all,

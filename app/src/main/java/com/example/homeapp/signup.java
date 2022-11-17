@@ -75,7 +75,7 @@ public class signup extends AppCompatActivity {
                                 reference.child(username_s).setValue(storingdatass);
 
                                 Toast.makeText(getApplicationContext(),"Register sucsessfuly",Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(),dashboard.class);
+                                Intent intent = new Intent(getApplicationContext(),login.class);
                                 startActivity(intent);
                                 finish();
 

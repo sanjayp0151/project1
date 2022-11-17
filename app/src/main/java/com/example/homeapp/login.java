@@ -19,6 +19,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+
+
+
+
+
 public class login extends AppCompatActivity {
 
 
@@ -71,8 +76,13 @@ public class login extends AppCompatActivity {
                                     if (passwordCheck.equals(password_data)){
                                         password_var.setError(null);
                                         password_var.setErrorEnabled(false);
+
+
+
+
+
                                         Toast.makeText(getApplicationContext(),"login sucsssesfully ",Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(),dashboard.class);
+                                        Intent intent = new Intent(getApplicationContext(),location.class);
                                         startActivity(intent);
                                         finish();
                                     }else {

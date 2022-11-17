@@ -29,7 +29,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/poppins_extrabold"
         android:text="SignUp"
-        android:textColor="#3F51B5"
+        android:textColor="@color/colorPrimary"
         android:textSize="30sp" />
 
     <TextView
@@ -141,7 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:background="@color/material_dynamic_primary70"
+        android:background="@color/colorPrimary"
         android:text="Signup"
         android:textColor="#283593"
         tools:ignore="OnClick" />

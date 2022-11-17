@@ -41,12 +41,13 @@
 
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/let_go"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:padding="15dp"
         android:layout_marginBottom="5dp"
+        android:background="@color/material_dynamic_primary70"
 
         android:text="Lets go !" />
 

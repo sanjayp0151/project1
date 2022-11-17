@@ -26,7 +26,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/poppins_extrabold"
         android:text="Login  Here"
-        android:textColor="#3F51B5"
+        android:textColor="@color/colorPrimary"
         android:textSize="40sp" />
 
     <TextView
@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:background="@color/material_dynamic_primary70"
+        android:background="@color/colorPrimary"
         android:text="Login"
         android:textColor="#283593" />
 
