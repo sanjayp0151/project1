@@ -1,6 +1,11 @@
 package com.example.homeapp;
 
+import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +15,8 @@ import com.example.homeapp.adapter.AsiaFoodAdapter;
 import com.example.homeapp.adapter.PopularFoodAdapter;
 import com.example.homeapp.model.AsiaFood;
 import com.example.homeapp.model.PopularFood;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.normal.TedPermission;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,23 +32,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ImageView user_profile =findViewById(R.id.user_profile);
+        user_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),UserProfile.class);
+                startActivity(intent);
+            }
+        });
 
         // now here we will add some dummy data to out model class
         List<PopularFood> popularFoodList = new ArrayList<>();
-        popularFoodList.add(new PopularFood("civil line 1 ","$57",R.drawable.homesecond));
-        popularFoodList.add(new PopularFood("civil line  2","$57",R.drawable.homethird));
-        popularFoodList.add(new PopularFood("civil line  3","$57",R.drawable.homeforth));
-        popularFoodList.add(new PopularFood("civil line  3","$57",R.drawable.homethird));
-        popularFoodList.add(new PopularFood("civil line  3","$57",R.drawable.homeforth));
-        popularFoodList.add(new PopularFood("civil line  3","$57",R.drawable.homesecond));
+        popularFoodList.add(new PopularFood("super HIG 35 ,deen dayal nagar ","Rs 1500",R.drawable.homesecond));
+        popularFoodList.add(new PopularFood("MIG 15 ,deen dayal nagar","Rs 1400",R.drawable.homethird));
+        popularFoodList.add(new PopularFood("HIG 36,makroniya","Rs 500",R.drawable.homeforth));
+        popularFoodList.add(new PopularFood("sai room baheriya","$57",R.drawable.homethird));
+        popularFoodList.add(new PopularFood("civil line  3","Rs 1300",R.drawable.homeforth));
+        popularFoodList.add(new PopularFood("civil line  3","1700",R.drawable.homesecond));
 
 
         setPopularRecycler(popularFoodList);
 
         List<AsiaFood> asiaFoodList = new ArrayList<>();
-        asiaFoodList.add(new AsiaFood("makroniya 1","25",R.drawable.homeforth,"4.5","santosh"));
-        asiaFoodList.add(new AsiaFood("makroniya 2","29",R.drawable.homeforth,"4.0","antosh"));
-        asiaFoodList.add(new AsiaFood("makroniya 3","28",R.drawable.homeforth,"3.5","tosh"));
+        asiaFoodList.add(new AsiaFood("HIG 36,makroniya","25",R.drawable.homeforth,"4.5","santosh"));
+        asiaFoodList.add(new AsiaFood("Nirvahan hostel","29",R.drawable.homeforth,"4.0","antosh"));
+        asiaFoodList.add(new AsiaFood("C nagar palace","28",R.drawable.homeforth,"3.5","tosh"));
         asiaFoodList.add(new AsiaFood("makroniya 4","29",R.drawable.homeforth,"2.5","stosh"));
         asiaFoodList.add(new AsiaFood("makroniya 5","25",R.drawable.homeforth,"4.5","sans"));
         setAsiaRecycler(asiaFoodList);
@@ -60,6 +75,29 @@ public class MainActivity extends AppCompatActivity {
         asiaRecycler.setLayoutManager(layoutManager);
         asiaFoodAdapter = new AsiaFoodAdapter(this,asiaFoodList);
         asiaRecycler.setAdapter(asiaFoodAdapter);
+    }
+
+    public void for_location(View view) {
+
+            PermissionListener permissionlistener = new PermissionListener() {
+                @Override
+                public void onPermissionGranted() {
+                    Toast.makeText(getApplicationContext(), "Permission Granted", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onPermissionDenied(List<String> deniedPermissions) {
+                    Toast.makeText(getApplicationContext(), "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+                }
+
+
+            };
+            TedPermission.create()
+                    .setPermissionListener(permissionlistener)
+                    .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
+                    .setPermissions(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)
+                    .check();
+
     }
 
     // Hi all,

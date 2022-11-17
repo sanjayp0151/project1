@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/user_profile"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
@@ -34,9 +34,9 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/user_profile"
+        app:layout_constraintEnd_toStartOf="@+id/user_profile"
+        app:layout_constraintTop_toTopOf="@+id/user_profile"
         app:srcCompat="@drawable/ic_notification" />
 
     <EditText
@@ -144,7 +144,8 @@
                 app:navigationIcon="@drawable/ic_menu_black_24dp" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton2"
+                android:id="@+id/location_on_main"
+                android:onClick="for_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
